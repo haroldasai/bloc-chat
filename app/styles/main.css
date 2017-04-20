@@ -1,0 +1,15 @@
+.rooms-list {
+  list-style-type: none;
+  padding-left: 0.3rem;
+}
+
+.navbar {
+  margin: 0;
+  padding-top: 1.0rem;
+  padding-left: 1.5rem;
+  background-color: #EEEEEE;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+}
