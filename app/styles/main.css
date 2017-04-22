@@ -1,15 +1,44 @@
+.hero-title {
+  margin-right: 1.0rem;
+  margin-bottom: 0rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.new-room-button {
+  height: 2.0rem;
+  padding: 0.4rem 1rem 0.3rem 1rem;
+  display: inline-block;
+  vertical-align: text-bottom;
+  background-color: rgb(245, 245, 245);
+  color: #666666;
+  border: none;
+}
+
+.new-room-button:hover {
+  background-color: rgb(251, 251, 251);
+}
+
+
 .rooms-list {
   list-style-type: none;
-  padding-left: 0.3rem;
+  padding-left: 0.1rem;
+}
+
+.rooms-list li{
+  font-size: 1.0rem;
+  margin-bottom: 0.5rem;
 }
 
 .navbar {
   margin: 0;
-  padding-top: 1.0rem;
+  padding-top: 1.5rem;
   padding-left: 1.5rem;
-  background-color: #EEEEEE;
-  width: 25%;
+  background-color: #DDDDDD;
+  width: 20%;
   height: 100%;
   position: fixed;
   overflow: auto;
+  color: #444444;
 }
