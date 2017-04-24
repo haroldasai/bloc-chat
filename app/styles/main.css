@@ -30,7 +30,13 @@
 .rooms-list li{
   font-size: 1.0rem;
   margin-bottom: 0.5rem;
+  cursor: default;
 }
+
+.rooms-list li:hover{
+  color: rgb(140, 140, 140);
+}
+
 
 .wrap {
   position: fixed;
@@ -60,6 +66,7 @@
   padding-top: 1.4rem;
   background-color: white;
   overflow: auto;
+  color: #444444;
 }
 
 .room-title {

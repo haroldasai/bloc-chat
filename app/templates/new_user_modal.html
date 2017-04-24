@@ -1,0 +1,14 @@
+<div class="modal-user-bg">
+  <div class="modal-new-user">
+      <div class="modal-header">
+          <h3 class="modal-title" id="modal-title">Set a username</h3>
+      </div>
+      <div class="modal-form-box">
+          <form class="modal-form" ng-submit="usermodal.setUsername()">
+              <div class="status-bar">{{usermodal.statusBar}}</div>
+              <input type="text" class="user-input" value="" ng-model="usermodal.username"><br>
+              <input type="submit" class="button-setusername" value="Set username">
+          </form>
+      </div>
+  </div>
+</div>

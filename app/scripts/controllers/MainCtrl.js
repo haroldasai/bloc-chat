@@ -9,8 +9,8 @@
             var modalInstance = $uibModal.open({
                 animation: this.animationsEnabled,
                 templateUrl: '/templates/new_room_modal.html',
-                controller: 'ModalCtrl',
-                controllerAs: 'modal'
+                controller: 'RoomModalCtrl',
+                controllerAs: 'roommodal'
             });
         };
 
