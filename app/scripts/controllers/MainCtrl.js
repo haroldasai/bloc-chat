@@ -1,7 +1,9 @@
 (function() {
-    function MainCtrl(Room, $uibModal) {
+    function MainCtrl(Room, Message, $uibModal) {
         this.chatRoomArray = Room.all;
         this.animationsEnabled = true;
+        this.currentRoomTitle = "";
+        this.currentRoomId = "";
 
         this.openNewRoomModal = function(){
             var modalInstance = $uibModal.open({
@@ -11,10 +13,21 @@
                 controllerAs: 'modal'
             });
         };
+
+        this.setCurrentRoom = function(name, id) {
+            this.currentRoomTitle = name;
+            this.currentRoomId = id;
+            this.messageArray = Message.getByRoomId(id);
+        };
+
+
+
+
+
     }
 
     angular
         .module('blocChat')
-        .controller('MainCtrl', ['Room', '$uibModal', MainCtrl]);
+        .controller('MainCtrl', ['Room', 'Message', '$uibModal', MainCtrl]);
 
 })();

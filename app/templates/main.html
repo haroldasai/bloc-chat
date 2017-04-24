@@ -1,12 +1,24 @@
-<section class="navbar">
+<div class="wrap">
+    <div class="nav-bar">
 
-    <div class="hero-title">Bloc Chat</div>
-    <button class="new-room-button" type="button" ng-click="main.openNewRoomModal()">New room</button>
+        <div class="hero-title">Bloc Chat</div>
+        <button class="new-room-button" type="button" ng-click="main.openNewRoomModal()">New room</button>
 
-    <ul class="rooms-list">
-        <li class="room-name" ng-repeat="item in main.chatRoomArray track by $index">
-              {{item.$value}}
-        </li>
-    </ul>
+        <ul class="rooms-list">
+            <li class="room-name" ng-repeat="item in main.chatRoomArray track by $index" ng-click="main.setCurrentRoom(item.$value, item.$id)">
+                  {{item.$value}}
+            </li>
+        </ul>
 
-</section>
+    </div>
+
+    <div class="room-view" >
+        <span class="room-title">{{main.currentRoomTitle}}</span>
+        <ul class="messages-list">
+            <li class="message" ng-repeat="message in main.messageArray track by $index">
+                <span class="message-username">{{message.username}}</span></br>
+                <span class="message-content">{{message.content}}</span><span class="message-time">{{message.sentAt}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

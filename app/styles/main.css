@@ -1,14 +1,15 @@
 .hero-title {
   margin-right: 1.0rem;
   margin-bottom: 0rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: bold;
   display: inline-block;
 }
 
 .new-room-button {
-  height: 2.0rem;
-  padding: 0.4rem 1rem 0.3rem 1rem;
+  height: 1.6rem;
+  margin-top: 0.3rem;
+  padding: 0.28rem 0.6rem 0.25rem 0.6rem;
   display: inline-block;
   vertical-align: text-bottom;
   background-color: rgb(245, 245, 245);
@@ -31,14 +32,56 @@
   margin-bottom: 0.5rem;
 }
 
-.navbar {
+.wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-bar {
   margin: 0;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
   background-color: #DDDDDD;
-  width: 20%;
+  box-sizing: border-box;
+  width: 24%;
+  max-width: 250px;
   height: 100%;
-  position: fixed;
   overflow: auto;
   color: #444444;
+  float: left;
+}
+
+.room-view {
+  height: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.4rem;
+  background-color: white;
+  overflow: auto;
+}
+
+.room-title {
+  font-size: 1.4rem
+}
+
+.messages-list {
+  padding-left: 0.1rem;
+  list-style-type: none;
+}
+
+.messages-list li {
+  padding-bottom: 3px;
+  border-bottom: solid 1px;
+  border-color: rgb(190, 190, 190);
+}
+
+.message-username {
+  color: rgb(190, 190, 190);
+  font-size: 0.8rem;
+}
+
+.message-time {
+  float: right;
 }
