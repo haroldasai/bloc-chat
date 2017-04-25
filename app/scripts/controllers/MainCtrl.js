@@ -1,10 +1,21 @@
 (function() {
-    function MainCtrl(Room, Message, $uibModal, $cookies) {
+    function MainCtrl(Room, Message, $uibModal, $cookies, $scope) {
+        var vim = this;
         this.chatRoomArray = Room.all;
         this.animationsEnabled = true;
-        this.currentRoomTitle = "";
+        this.currentRoomTitle = "Select your chat room!";
         this.currentRoomId = "";
-        this.currentUser = $cookies.get('blocChatCurrentUser');
+        this.currentUser = "";//$cookies.get('blocChatCurrentUser')"";
+
+        if($cookies.get('blocChatCurrentUser')){
+          this.currentUser = $cookies.get('blocChatCurrentUser');
+        }
+
+        $scope.$on('BOOM', function(events, args){
+          console.log(args);
+          console.log("coco");
+          vim.currentUser = args;
+        });
 
         this.openNewRoomModal = function(){
           var modalInstance = $uibModal.open({
@@ -31,6 +42,6 @@
 
     angular
         .module('blocChat')
-        .controller('MainCtrl', ['Room', 'Message', '$uibModal', '$cookies', MainCtrl]);
+        .controller('MainCtrl', ['Room', 'Message', '$uibModal', '$cookies', '$scope', MainCtrl]);
 
 })();
