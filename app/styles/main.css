@@ -9,7 +9,7 @@
 .new-room-button {
   height: 1.6rem;
   margin-top: 0.3rem;
-  padding: 0.28rem 0.6rem 0.25rem 0.6rem;
+  padding: 0.28rem 0.6rem 0.28rem 0.6rem;
   display: inline-block;
   vertical-align: text-bottom;
   background-color: rgb(245, 245, 245);
@@ -47,8 +47,8 @@
 .nav-bar {
   margin: 0;
   padding-top: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
   background-color: #DDDDDD;
   box-sizing: border-box;
   width: 24%;
@@ -61,12 +61,41 @@
 
 .room-view {
   height: 100%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
   padding-top: 1.4rem;
   background-color: white;
   overflow: auto;
   color: #444444;
+  position: relative;
+}
+
+
+.message-form {
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+}
+
+.message-input {
+  position: absolute;
+  padding-left: 0.2rem;
+  height: 1.6rem;
+  width: calc(100% - 100px);
+}
+
+.button-sendmessage {
+  height: 2.0rem;
+  width: 50px;
+  position: absolute;
+  margin-left: calc(100% - 89px);
+  background-color: #999999;
+  color: white;
+  border: none;
+}
+
+.button-sendmessage:hover {
+  background-color: rgb(190, 190, 190);
 }
 
 .room-title {
