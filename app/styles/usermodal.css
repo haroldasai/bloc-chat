@@ -13,10 +13,11 @@
 .modal-new-user {
     background-color: #DDDDDD;
     margin: 15% auto; /*15% from the top and centered */
-    padding: 30px;
+    padding: 30px 30px 20px 30px;
     border: none;/*Could be more or less, depending on screen size */
     width: 295px;
     color: #444444;
+    overflow: hidden;
 }
 
 .user-input {

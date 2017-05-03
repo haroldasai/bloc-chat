@@ -10,7 +10,7 @@
               alert("Username should not be empty!");
             }
         };
-    };
+    }
 
     angular
         .module('blocChat')

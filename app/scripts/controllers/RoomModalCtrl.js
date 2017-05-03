@@ -1,13 +1,16 @@
 (function() {
-    function RoomModalCtrl(Room, $uibModalInstance) {
+    function RoomModalCtrl(Room, User, $uibModalInstance, $cookies) {
         var modal = this;
 
         modal.chatRoomArray = Room.all;
         modal.statusBar = "Enter a room name";
+        modal.privateRoom = false;
+        modal.currentUserId = $cookies.get('blocChatCurrentUser');
+        modal.currentUserObj = User.getUserobj(modal.currentUserId);
 
         modal.addData = function(){
-            if(modal.inputData){
-                Room.addNewRoom(modal.inputData);
+            if(modal.inputData && (/\S+/.test(modal.inputData))){
+                Room.addNewRoom(modal.currentUserId, modal.inputData, modal.privateRoom, modal.currentUserObj.username);
                 modal.cancel();
             } else {
                 alert("Room name should not be empty.");
@@ -19,9 +22,9 @@
         };
 
 
-    };
+    }
 
     angular
         .module('blocChat')
-        .controller('RoomModalCtrl', ['Room', '$uibModalInstance', RoomModalCtrl]);
+        .controller('RoomModalCtrl', ['Room', 'User', '$uibModalInstance', '$cookies', RoomModalCtrl]);
 })();

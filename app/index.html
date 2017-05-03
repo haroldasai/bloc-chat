@@ -5,10 +5,14 @@
     <title>Bloc Chat</title>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="/styles/frame.css">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/proommodal.css">
     <link rel="stylesheet" href="/styles/usermodal.css">
+    <link rel="stylesheet" href="/styles/signinmodal.css">
+    <link rel="stylesheet" href="/styles/accountmodal.css">
 </head>
 <body>
     <ui-view></ui-view>
@@ -31,6 +35,9 @@
     <!-- Cookies-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
 
+    <!--Scroll Glue-->
+    <script  src="/scripts/ng-scroll-glue/dist/ng-scroll-glue.min.js"></script>
+
     <script>
       // Initialize Firebase
       var config = {
@@ -43,12 +50,19 @@
       };
       firebase.initializeApp(config);
     </script>
+
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/services/Auth.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/services/Message.js"></script>
+    <script src="/scripts/services/User.js"></script>
     <script src="/scripts/controllers/CookieCtrl.js"></script>
     <script src="/scripts/controllers/MainCtrl.js"></script>
     <script src="/scripts/controllers/RoomModalCtrl.js"></script>
+    <script src="/scripts/controllers/PrivateRoomModalCtrl.js"></script>
     <script src="/scripts/controllers/UserModalCtrl.js"></script>
+    <script src="/scripts/controllers/SignInModalCtrl.js"></script>
+    <script src="/scripts/controllers/AccountModalCtrl.js"></script>
+    <script src="/scripts/filters/iconverter.js"></script>
 </body>
 </html>
