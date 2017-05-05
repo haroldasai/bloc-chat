@@ -15,7 +15,7 @@
         this.hidePrivateRooms = false;
         this.publicRoomsFolder = "-Public rooms";
         this.privateRoomsFolder = "-Private rooms";
-        this.currentPrivateRoom = "private room"
+        this.currentPrivateRoom = "private room";
 
         if(this.currentUserId && this.currentUserPassword) {
           vim.currentUserObj = User.getUserobj(this.currentUserId);
@@ -37,7 +37,7 @@
               $uibModal.open({
                 // Modal configuration object properties
                 animation: true,
-                templateUrl: '/templates/signin_modal.html',
+                templateUrl: 'templates/signin_modal.html',
                 controller: 'SignInModalCtrl',
                 controllerAs: 'signinmodal'
               })
@@ -54,7 +54,7 @@
           vim.currentUserObj.$loaded().then(function(userobj){
             console.log(userobj);
             console.log(userobj.username);
-            vim.welcome = "Welcome "
+            vim.welcome = "Welcome ";
             vim.currentUsername = userobj.username;
             vim.currentRoomTitle = "Select a chat room";
             vim.publicRoomArray = Room.publicRooms;
@@ -65,7 +65,7 @@
         this.openNewRoomModal = function(){
           var modalInstance = $uibModal.open({
               animation: this.animationsEnabled,
-              templateUrl: '/templates/new_room_modal.html',
+              templateUrl: 'templates/new_room_modal.html',
               controller: 'RoomModalCtrl',
               controllerAs: 'roommodal'
           });
@@ -76,7 +76,7 @@
           $cookies.put('currentRoomName', roomname);
           var prmodalInstance = $uibModal.open({
               animation: this.animationsEnabled,
-              templateUrl: '/templates/private_room_modal.html',
+              templateUrl: 'templates/private_room_modal.html',
               controller: 'PrivateRoomModalCtrl',
               controllerAs: 'proommodal'
           });

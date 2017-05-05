@@ -6,7 +6,7 @@
         $uibModal.open({
           // Modal configuration object properties
           animation: true,
-          templateUrl: '/templates/new_account_modal.html',
+          templateUrl: 'templates/new_account_modal.html',
           controller: 'AccountModalCtrl',
           controllerAs: 'accountmodal'
         });

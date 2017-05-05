@@ -10,7 +10,7 @@
         $uibModal.open({
           // Modal configuration object properties
           animation: true,
-          templateUrl: '/templates/signin_modal.html',
+          templateUrl: 'templates/signin_modal.html',
           controller: 'SignInModalCtrl',
           controllerAs: 'signinmodal'
         });
