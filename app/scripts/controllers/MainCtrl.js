@@ -28,7 +28,7 @@
               vim.currentAuthObj = firebaseUser;
               vim.welcome = "Welcome ";
               vim.currentUsername = userobj.username;
-              vim.currentRoomTitle = "Select your chatroom";
+              vim.currentRoomTitle = "Select a chat room";
               vim.publicRoomArray = Room.publicRooms;
               vim.privateRoomArray = User.privateRooms(vim.currentUserId);
               User.markOnline(firebaseUser.uid, true);
@@ -56,7 +56,7 @@
             console.log(userobj.username);
             vim.welcome = "Welcome "
             vim.currentUsername = userobj.username;
-            vim.currentRoomTitle = "Select your chatroom";
+            vim.currentRoomTitle = "Select a chat room";
             vim.publicRoomArray = Room.publicRooms;
             vim.privateRoomArray = User.privateRooms(vim.currentUserId);
           });
@@ -98,10 +98,15 @@
         };
 
         this.sendMessage = function() {
-          Message.killPopup(this.currentUserId);
-          var currentTime = getTime();
-          Message.send(this.message, this.currentRoomId, currentTime, this.currentUserId, this.currentUsername);
-          this.message = "";
+          if(this.currentRoomId=="") {
+            this.message = "";
+            alert("Please select a chat room.");
+          } else {
+            Message.killPopup(this.currentUserId);
+            var currentTime = getTime();
+            Message.send(this.message, this.currentRoomId, currentTime, this.currentUserId, this.currentUsername);
+            this.message = "";
+          }
         };
 
         var getTime = function(){
