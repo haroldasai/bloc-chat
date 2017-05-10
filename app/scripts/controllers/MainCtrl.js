@@ -17,6 +17,16 @@
         this.privateRoomsFolder = "-Private rooms";
         this.currentPrivateRoom = "private room"
 
+        this.timerObj;
+        var offlineTracker;
+        var timeout = 900000;
+
+        this.resetTimer = function(){
+          clearTimeout(vim.timerObj);
+          vim.timerObj = setTimeout(vim.signOut, timeout);
+          console.log('sign out timer reseted.');
+        };
+
         if(this.currentUserId && this.currentUserPassword) {
           vim.currentUserObj = User.getUserobj(this.currentUserId);
           vim.currentUserObj.$loaded().then(function(userobj){
@@ -32,6 +42,15 @@
               vim.publicRoomArray = Room.publicRooms;
               vim.privateRoomArray = User.privateRooms(vim.currentUserId);
               User.markOnline(firebaseUser.uid, true);
+              vim.timerObj = setTimeout(vim.signOut, timeout);
+
+              offlineTracker = User.getUserref(vim.currentUserId);
+              offlineTracker.on('value', function(snapshot){
+                if(snapshot.val()==false){
+                  $window.location.reload();
+                }
+              });
+
             }).catch(function(error) {
               console.error("Authentication failed:", error);
               $uibModal.open({
@@ -47,9 +66,16 @@
         }
 
         $scope.$on('AUTHOBJ', function(events, authObj){
+          vim.timerObj = setTimeout(vim.signOut, timeout);
           vim.currentAuthObj = authObj;
           console.log(authObj.uid);
           vim.currentUserId = authObj.uid;
+          offlineTracker = User.getUserref(vim.currentUserId);
+          offlineTracker.on('value', function(snapshot){
+            if(snapshot.val()==false){
+              $window.location.reload();
+            }
+          });
           vim.currentUserObj = User.getUserobj(authObj.uid);
           vim.currentUserObj.$loaded().then(function(userobj){
             console.log(userobj);
@@ -61,6 +87,8 @@
             vim.privateRoomArray = User.privateRooms(vim.currentUserId);
           });
         });
+
+
 
         this.openNewRoomModal = function(){
           var modalInstance = $uibModal.open({
@@ -192,6 +220,7 @@
         };
 
         this.typingPopup = function() {
+          vim.resetTimer();
           Message.typingPopup( this.currentUsername + " is typing...", this.currentRoomId, "", this.currentUserId, "");
         };
 

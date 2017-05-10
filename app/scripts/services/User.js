@@ -35,6 +35,10 @@
         return userobj;
       },
 
+      getUserref: function(userId) {
+        return rootRef.ref("users/"+userId+"/online");
+      },
+
       privateRooms: function(userId) {
         return $firebaseArray(ref.child(userId).child('privaterooms'));
       },

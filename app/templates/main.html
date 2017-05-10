@@ -1,4 +1,4 @@
-<div class="wrap">
+<div class="wrap" ng-click="main.resetTimer()">
     <div class="nav-bar">
         <div class="hero-title">Bloc Chat</div>
 
@@ -39,16 +39,16 @@
       <ul class="user-list">
           <li class="user-name" ng-repeat="user in main.userArray | orderBy: 'online':true" ng-show="main.checkProomMember(user)">
               <span class="user-list">{{user.username}}&nbsp;</span><span ng-show="user.$id==main.currentUserId">(you)</span>
-              <a class="online-icon" ng-show="user.online"><span class="ion-checkmark-circled"></span></a>
-              <a class="offline-icon" ng-show="!user.online"><span class="ion-close-circled"></span></a>
+              <a class="online-icon" ng-show="user.online"><span class="ion-checkmark-circled" title="online"></span></a>
+              <a class="offline-icon" ng-show="!user.online"><span class="ion-close-circled" title="offline"></span></a>
           </li>
       </ul>
       <div class="user-view-title">All users</div>
       <ul class="user-list">
           <li class="user-name" ng-repeat="user in main.userArray | orderBy: 'online':true">
               <span class="user-list">{{user.username}}&nbsp;</span><span ng-show="user.$id==main.currentUserId">(you)</span>
-              <a class="online-icon" ng-show="user.online"><span class="ion-checkmark-circled"></span></a>
-              <a class="offline-icon" ng-show="!user.online"><span class="ion-close-circled"></span></a>
+              <a class="online-icon" ng-show="user.online"><span class="ion-checkmark-circled" title="online"></span></a>
+              <a class="offline-icon" ng-show="!user.online"><span class="ion-close-circled" title="offline"></span></a>
           </li>
       </ul>
     </div>

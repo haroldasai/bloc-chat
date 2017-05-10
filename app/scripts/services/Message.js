@@ -33,7 +33,7 @@
                 ref.child(userId).remove().then(function(){
                   console.log("Message with id " + userId + " has been deleted.");
                 });
-              },4800);
+              },5000);
             });
           }
         });
