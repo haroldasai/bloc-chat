@@ -56,7 +56,7 @@
               $uibModal.open({
                 // Modal configuration object properties
                 animation: true,
-                templateUrl: '/templates/signin_modal.html',
+                templateUrl: 'templates/signin_modal.html',
                 controller: 'SignInModalCtrl',
                 controllerAs: 'signinmodal'
               })
@@ -93,7 +93,7 @@
         this.openNewRoomModal = function(){
           var modalInstance = $uibModal.open({
               animation: this.animationsEnabled,
-              templateUrl: '/templates/new_room_modal.html',
+              templateUrl: 'templates/new_room_modal.html',
               controller: 'RoomModalCtrl',
               controllerAs: 'roommodal'
           });
@@ -104,7 +104,7 @@
           $cookies.put('currentRoomName', roomname);
           var prmodalInstance = $uibModal.open({
               animation: this.animationsEnabled,
-              templateUrl: '/templates/private_room_modal.html',
+              templateUrl: 'templates/private_room_modal.html',
               controller: 'PrivateRoomModalCtrl',
               controllerAs: 'proommodal'
           });
