@@ -1,5 +1,4 @@
 (function() {
     angular
-        .module('blocChat', ['firebase', 'ui.bootstrap', 'ngCookies', 'ngScrollGlue'])
-        .config(config);
+        .module('blocChat', ['firebase', 'ui.bootstrap', 'ngCookies', 'ngScrollGlue']);
 })();
